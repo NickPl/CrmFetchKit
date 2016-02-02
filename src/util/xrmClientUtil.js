@@ -20,6 +20,9 @@ module.exports = (function(){
         else if (typeof Xrm !== "undefined") {
             context = Xrm.Page.context;
         }
+        else if (typeof parent.Xrm !== "undefined") {
+            context = parent.Xrm.Page.context;
+        }
         else {
             throw new Error("Context is not available.");
         }
